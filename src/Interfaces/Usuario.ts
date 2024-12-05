@@ -9,5 +9,6 @@ export interface Usuario {
     name: string | null,
     email: string | null,
     password: string | null,
-    role: string | null
+    role: string | null,
+    observedShares: string | null 
 }

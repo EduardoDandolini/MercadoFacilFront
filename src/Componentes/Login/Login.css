@@ -1,67 +1,114 @@
-/* Contêiner que coloca a imagem à esquerda e o formulário à direita */
+/* Contêiner principal com tema minimalista */
 .login-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Empilha elementos verticalmente para melhor responsividade */
     align-items: center;
-    padding: 10px 20px;
-    height: 25px; /* Ajusta o tamanho da barra de navegação */
+    gap: 20px; /* Espaço entre elementos */
+    padding: 30px;
+    background-color: #f9fafb; /* Fundo claro */
+    border: 1px solid #e5e7eb; /* Borda cinza suave */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 400px; /* Limita a largura máxima */
+    margin: 20px auto; /* Centraliza na página */
 }
 
-/* Estilizando o formulário */
-.LoginForm {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-/* Estilizando o formulário para que os inputs e o botão fiquem em linha */
-.login-form-inline {
-    display: flex;
-    align-items: center;
-}
-
-.login-form-inline input {
-    margin-right: 10px;
-    padding: 5px;
-    font-size: 1rem;
-    border: 1px solid #7e7878;
-    border-radius: 4px;
-}
-
-.submit-button {
-    padding: 5px 10px;
-    font-size: 1rem;
-    background-color: #24394f;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.submit-button:hover {
-    background-color: #37577a;
-}
-
-/* Estilizando a imagem */
+/* Estilizando o contêiner da imagem */
 .image-container {
-    flex: 1;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-left: 0px;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-container img {
-    transform: scale(0.1);
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    border: 2px solid #ccc;
+    border: 2px solid #e5e7eb; /* Borda cinza suave */
+    background-color: #ffffff; /* Fundo branco */
+    object-fit: cover; /* Ajusta a imagem */
 }
 
 /* Estilizando o título */
 .spacer {
-    flex: 1;
-    text-align: left;
-    font-size: 1.0rem;
+    text-align: center;
+    font-size: 1.4rem; /* Texto maior */
     font-weight: bold;
+    color: #1f2937; /* Texto cinza escuro */
+}
+
+/* Estilizando o formulário */
+.LoginForm {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    display: flex;
+    justify-content: center;
+}
+
+.login-form-inline {
+    display: flex;
+    flex-direction: column; /* Inputs empilhados */
+    gap: 15px; /* Espaço entre inputs */
+    width: 100%; /* Inputs ocupam toda a largura */
+}
+
+/* Estilizando os inputs */
+.login-form-inline input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #d1d5db; /* Borda cinza claro */
+    border-radius: 8px; /* Bordas arredondadas */
+    background-color: #ffffff; /* Fundo branco */
+    color: #374151; /* Texto cinza escuro */
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+.login-form-inline input:focus {
+    border-color: #2563eb; /* Azul mais forte ao focar */
+    box-shadow: 0px 0px 6px rgba(37, 99, 235, 0.4); /* Sombra ao focar */
+}
+
+/* Estilizando o botão */
+.submit-button {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #2563eb; /* Azul principal */
+    color: white; /* Texto branco */
+    border: none;
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.submit-button:hover {
+    background-color: #1d4ed8; /* Azul mais escuro ao passar o mouse */
+    transform: scale(1.03); /* Leve aumento */
+}
+
+.footer {
+    background-color: #f9fafb;
+    color: #6b7280; 
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    border-top: 1px solid #e5e7eb; 
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px;
+    }
+    .spacer {
+        font-size: 1.2rem;
+    }
+    .login-form-inline {
+        gap: 10px;
+    }
+    .submit-button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
 }

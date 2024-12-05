@@ -3,7 +3,14 @@ import { LoginData } from '../Interfaces/LoginData';
 import { Usuario } from '../Interfaces/Usuario';
 
 const apiClient = axios.create({
-    baseURL: 'http://localhost:5165/api',
+    baseURL: 'https://tcwhl22p-5165.brs.devtunnels.ms/api',
+    headers:{
+        'Content-Type': 'application/json'
+    }
+})
+
+const apiClientV2 = axios.create({
+    baseURL: 'https://tcwhl22p-5165.brs.devtunnels.ms',
     headers:{
         'Content-Type': 'application/json'
     }
@@ -48,7 +55,7 @@ export const FetchShareBySymbol = async (symbol: string) =>{
 
 export const FetchShareListPaged = async (page: number, resultsByPage: number) =>{
     try {
-        const response = await apiClient.get(`/Share/${page}, ${resultsByPage}`,
+        const response = await apiClientV2.get(`/Share/${page}, ${resultsByPage}`,
             {
                 headers: {
                     'Authorization': `Bearer ${sessionStorage.getItem('token')}`
